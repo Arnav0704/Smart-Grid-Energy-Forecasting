@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Card,
@@ -23,7 +23,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Factory, Ban } from "lucide-react";
+import { Factory } from "lucide-react";
 import Dashboard from "./Dashboard";
 const getPlantIcon = (type) => {
   switch (type) {
@@ -190,7 +190,7 @@ const Companies = () => {
     </>
   )
   return (
-    <div className="dark shadow-xl ml-[16rem] h-[96vh] bg-background rounded-r-2xl w-[84%] p-6 pl-8">
+    <div className="dark shadow-xl ml-24 relative h-[96vh] bg-background rounded-r-2xl w-[84%] p-6 pl-8">
       <div className="">
         <div className="rounded-md h-fit p-4 flex-1 dark">
           <div className="flex justify-between">
@@ -235,7 +235,7 @@ const Companies = () => {
               isSelected < 0 ? (
                 energyPlants.length && !isFormVisible ? (
                   energyPlants.map((plant, index) => (
-                    <span className="mt-4">
+                    <span key={index} className="mt-4">
                     <Card
                       key={index}
                       className={`group ${getCardStyle(
